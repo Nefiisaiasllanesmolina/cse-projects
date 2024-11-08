@@ -1,0 +1,13 @@
+What is version control and why is it important?
+
+They are software tools in which we can save different
+versions of code made over time. Some advantages are that we 
+can fix bugs in the code without affecting the code
+main until we have found the solution. Another advantage
+is that it facilitates teamwork, since each member of the team
+computer has a copy of the code and can make changes to it
+without affecting the work of others. The most version control
+common is Git, it can link to your code editor and perform
+changes to the source code. The command to start a repository
+in Git it is git init, this command starts the repository to get started 
+to manage your versions of source code.
