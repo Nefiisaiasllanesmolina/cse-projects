@@ -12,7 +12,7 @@ class Program
         {
             counter = 0;
             Random randomGenerator = new Random();
-            int magicNumber = randomGenerator.Next(1, 10);
+            int magicNumber = randomGenerator.Next(1, 101);
             while (magicNumber != response)
             {
                 Console.Write("What is your guess? ");
