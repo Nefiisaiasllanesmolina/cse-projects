@@ -15,8 +15,6 @@ public class PromptGenerator
         int index = rnd.Next(prompts.Count);
         string _prompt = prompts[index];
 
-        Console.WriteLine(_prompt);
-
         return _prompt;
     }
 }
