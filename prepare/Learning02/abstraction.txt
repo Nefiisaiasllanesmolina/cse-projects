@@ -1,0 +1,19 @@
+What is abstraction and why is it important?
+
+Abstraction is the process to simplificate the complex ideas 
+into simple ones, conservating only the essential elements. 
+A benefit of abstraction is that we can use complex functions
+in a simple way . Also our code will be more clear to understand
+and use it.
+One example of abstraction is when we use functions, and we
+reuse the functions we are using abstraction in this way. Also
+languages like Python use default functions that requires
+many lines of code to use them.
+Also this is an example of abstraction:
+
+foreach (Job job in _jobs)
+        {
+            job.Display();
+        }
+
+We are simplifying the loop process in few lines of code.
