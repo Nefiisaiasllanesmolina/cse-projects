@@ -28,5 +28,7 @@ class Program
         resume2._name = "Cosqui";
         resume2._jobs.Add(job1);
         resume2._jobs.Add(job2);
+
+        
     }
 }

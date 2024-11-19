@@ -4,6 +4,9 @@ using System.Runtime.InteropServices;
 using System.Collections.Generic;
 using System.Security.Cryptography.X509Certificates;
 
+
+
+
 public class Journal {
     public List<Entry> _entries = new List<Entry>()
     {
@@ -28,8 +31,24 @@ public class Journal {
     public void SaveToFile(string file)
     {
         string filename = $"{file}.txt";
+        string path = $@"C:\Users\ssptr\OneDrive\Escritorio\cse-projects\prove\Develop02\{filename}";
 
-        using (StreamWriter outputFile = new StreamWriter(filename))
+         if (!File.Exists(path))
+        {
+            // Create a file to write to.
+            using (StreamWriter sw = File.CreateText(path))
+            {
+                sw.WriteLine("Hello");
+                sw.WriteLine("And");
+                sw.WriteLine("Welcome");
+                foreach (Entry entry in _entries)
+            {   
+                sw.WriteLine($"{entry}");
+            }
+            }	
+        }
+
+        /*using (StreamWriter outputFile = new StreamWriter(filename))
         {
             // You can add text to the file with the WriteLine method
             outputFile.WriteLine("This will be the first line in the file.");
@@ -41,8 +60,7 @@ public class Journal {
             }
 
             Console.WriteLine();
-            
-        }
+        }*/
     }
 
     public void LoadFromFile(string file)

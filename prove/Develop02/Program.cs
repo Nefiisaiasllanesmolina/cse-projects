@@ -50,6 +50,8 @@ class Program
                 string newFile = Console.ReadLine();
                 Journal file = new Journal ();
                 file.SaveToFile(newFile);
+
+               
                 
             }
 
