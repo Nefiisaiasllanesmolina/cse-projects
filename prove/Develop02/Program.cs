@@ -7,6 +7,12 @@ class Program
 {
     static void Main(string[] args)
     {
+        Journal journal = new Journal();
+        journal.run();
+    }
+}
+
+        /*
         int option = 0;
         while(option != 5)
         {
@@ -31,7 +37,7 @@ class Program
 
             else if (number == 2)
             {
-                /*Display all elements*/
+                /*Display all elements
                 
             }
             
@@ -66,7 +72,5 @@ class Program
                 Console.WriteLine();
                 option = 0;
             }
-        }
+        }*/
         
-    }
-}

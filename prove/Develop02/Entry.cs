@@ -5,13 +5,13 @@ public class Entry
     public string _promptText;
     public string _entryText;
 
-    public void Display()
+    public string Display(string _promptText, string _entryText)
     {   
         DateTime today = DateTime.Today;
         _date = today.ToString("d");
         
-
-        Console.WriteLine($"Date: {_date} - Prompt: {_promptText}");
-        Console.WriteLine($"{_entryText}");
+        string cap = ($"Date: {_date} - Prompt: {_promptText} \n{_entryText}");
+        //Console.WriteLine($"{_entryText}");
+        return cap;
     }
 }
