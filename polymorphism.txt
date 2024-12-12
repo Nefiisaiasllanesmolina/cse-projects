@@ -1,0 +1,10 @@
+What is polymorphism and why is it important?
+
+Polymorphism is the ability of a line of code to have different
+functions depending on the context.
+
+
+Highlight a benefit of Polymorphism.
+Provide an application of Polymorphism.
+Use a code example of Polymorphism from the program you wrote. (You should copy and paste a few lines of code that demonstrate the use of the principle.)
+Thoroughly explain these concepts. (This likely cannot be done in less than 100 words.)
