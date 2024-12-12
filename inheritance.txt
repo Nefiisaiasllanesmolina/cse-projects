@@ -1,8 +1,34 @@
 What is inheritance and why is it important?
-Your response must:
 
-Explain the meaning of Inheritance.
-Highlight a benefit of Inheritance.
-Provide an application of Inheritance.
-Use a code example of Inheritance from the program you wrote. (You should copy and paste a few lines of code that demonstrate the use of the principle.)
-Thoroughly explain these concepts. (This likely cannot be done in less than 100 words.)
+Inheritance is the ability to obtain attributes and methods
+from other classes directly. even without writing them.
+
+One benefit of inheritance is that you can assign the same
+method to different classes and avoid rewriting the same
+code multiple times.
+
+An example I learned this week is about a class called Person
+and a class called Employee, both share the Name method but 
+the employee can carry other additional methods.
+
+public class Person{
+    public string GetName()
+    {
+        return "Nefi";
+    }
+}
+
+public class Employee : Person{
+    public string GetPosition()
+    {
+        return "Manager";
+    }
+}
+
+Student student = new Student();
+string name = student.GetPosition();
+Console.WriteLine(name);
+
+In this case, the Person class is known as a parent class.
+The Employee class is known as a child class and both shared
+the GetName method but Employee class has more methods.
