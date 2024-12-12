@@ -1,0 +1,8 @@
+What is inheritance and why is it important?
+Your response must:
+
+Explain the meaning of Inheritance.
+Highlight a benefit of Inheritance.
+Provide an application of Inheritance.
+Use a code example of Inheritance from the program you wrote. (You should copy and paste a few lines of code that demonstrate the use of the principle.)
+Thoroughly explain these concepts. (This likely cannot be done in less than 100 words.)

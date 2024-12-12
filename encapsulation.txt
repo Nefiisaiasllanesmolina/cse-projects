@@ -1,0 +1,28 @@
+What is encapsulation and why is it important?
+
+Encapsulation is enclosing content inside a capsule. In this
+case, in programming it means that the classes of my program
+should only have access to the information that is clearly
+necessary and should not access information from other classes,
+they should communicate only through functions.
+
+A benefit of encapsulation is that if the code does not work
+as expected it is easier to find where the error is and correct
+it.
+
+An application of encapsulation is when we call a function of
+one class from another class and by neccessity my data type
+changes from a string to a list to be able to call that 
+function that has changed I need to modify my other class to
+be able to correctly call that function that has changed. 
+This is where the concept of encapsulation comes in.
+
+A good practice of encapsulation is when we set as private
+attribute of one class:
+
+public class Person
+{
+    private string _title;
+    private string _firstName;
+    private string _lastName;
+}
