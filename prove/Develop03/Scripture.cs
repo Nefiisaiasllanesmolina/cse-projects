@@ -1,6 +1,6 @@
 public class Scripture{
 
-    public string Reference(){
+    public string Scriptures(){
 
 
 
