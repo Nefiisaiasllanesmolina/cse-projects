@@ -3,8 +3,50 @@ What is polymorphism and why is it important?
 Polymorphism is the ability of a line of code to have different
 functions depending on the context.
 
+Polymorphism allows the code to be more general and flexible.
+New classes can be added without modifying the code that uses
+them.
 
-Highlight a benefit of Polymorphism.
-Provide an application of Polymorphism.
-Use a code example of Polymorphism from the program you wrote. (You should copy and paste a few lines of code that demonstrate the use of the principle.)
-Thoroughly explain these concepts. (This likely cannot be done in less than 100 words.)
+A common application of polymorphism is in the development
+of graphical user interfaces (GUI), especially when it comes
+to buttons or other interface elements that can have different
+behaviors depending on the type of object they belong to.
+
+public class Employee{
+    private float salary = 100f;
+
+    public virtual float CalculatePay()
+    {
+        return salary;
+    }
+}
+
+public class HourlyEmployee : Employee
+{
+    private float rate = 9f;
+    private float hours = 100f;
+
+    public override float CalculatePay()
+    {
+        return rate * hours;
+    }
+}
+
+List<Employee> employees = new List<Employee>();
+
+employees.add(new Employee());
+employees.add(new HourlyEmployee());
+
+foreach(Employee employee in employees)
+{
+    float pay = employee.CalculatePay();
+    Console.WriteLine(pay);
+}
+
+In this example, a new instance of Employee and HourlyEmployee
+are added to the employees list. In the loop that follows,
+the CalculatePay method is invoked for each one. The actual method
+that is called and the resulting value depends on the context,
+or the type of employee, during each iteration. If the object
+is an Hourly Employee the version defined fot hourly employees
+will be used instead.
