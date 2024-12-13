@@ -3,5 +3,4 @@ public class Reference{
     int _chapter;
     int _verse;
     int _endVerse;
-
 }

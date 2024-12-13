@@ -2,8 +2,6 @@ public class Scripture{
 
     public string Scriptures(){
 
-
-
         List<string> _references = new List<string>
         {
             "Jacob 2:18 Pero antes de buscar riquezas, buscad el reino de Dios.",
