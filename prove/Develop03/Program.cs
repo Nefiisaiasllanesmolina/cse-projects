@@ -4,9 +4,8 @@ class Program
 {
     static void Main(string[] args)
     {
-        Scripture scriptures = new Scripture();
 
-        Reference reference = new Reference("Nefi", 2, 25);
+        Reference reference = new Reference("Jacob", 2, 18);
         reference.GetDisplayText();
     }
 }
