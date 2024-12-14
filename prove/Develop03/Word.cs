@@ -11,7 +11,8 @@ public class Word{
     {  
         string hola = "hola";
         string wordHidden = "";
-        for (int i=0; i<hola.Length; i++){
+        for (int i=0; i<hola.Length; i++)
+        {
             wordHidden = wordHidden + "_";
         }
         Console.WriteLine(wordHidden);
