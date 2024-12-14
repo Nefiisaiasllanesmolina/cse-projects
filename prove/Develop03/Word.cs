@@ -8,8 +8,13 @@ public class Word{
     }
 
     public void Hide()
-    {
-
+    {  
+        string hola = "hola";
+        string wordHidden = "";
+        for (int i=0; i<hola.Length; i++){
+            wordHidden = wordHidden + "_";
+        }
+        Console.WriteLine(wordHidden);
     }
 
     public void Show()
