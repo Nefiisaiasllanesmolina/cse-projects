@@ -32,12 +32,9 @@ public class Word{
         return _isHidden;
     }
 
-    public string GetDisplayText()
+    /*public string GetDisplayText()
     {
-        if ()
-        {
-
-        }
+        
         return "hola";
-    }
+    }*/
 }
