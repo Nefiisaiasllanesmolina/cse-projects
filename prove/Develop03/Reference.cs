@@ -23,14 +23,14 @@ public class Reference
     {
         if (_endVerse == 0)
         {
-            string text = $"{_book} {_chapter}:{_verse}";
-            Console.WriteLine(text);
+            string text = $"{_book} {_chapter}:{_verse} ";
+            Console.Write(text);
             return text;
         }
         else
         {
-            string text = $"{_book} {_chapter}:{_verse}-{_endVerse}";
-            Console.WriteLine(text);
+            string text = $"{_book} {_chapter}:{_verse}-{_endVerse} ";
+            Console.Write(text);
             return text;
         }
     }

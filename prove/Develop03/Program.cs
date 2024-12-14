@@ -8,7 +8,8 @@ class Program
         Reference reference = new Reference("Jacob", 2, 18);
         reference.GetDisplayText();
 
-        Word word = new Word("hola");
+        Word word = new Word("hola_");
         word.Hide();
+        word.IsHidden();
     }
 }

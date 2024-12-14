@@ -14,21 +14,30 @@ public class Word{
         {
             wordHidden = wordHidden + "_";
         }
-        Console.WriteLine(wordHidden);
+        Console.Write(wordHidden);
     }
 
     public void Show()
     {
-
+        Console.Write(_text);
     }
 
-    /*public bool IsHidden()
+    public bool IsHidden()
     {
-
+        if (_text.Contains("_"))
+        {
+            _isHidden = true;
+        }
+        Console.Write(_isHidden);
+        return _isHidden;
     }
 
     public string GetDisplayText()
     {
+        if ()
+        {
 
-    }*/
+        }
+        return "hola";
+    }
 }
