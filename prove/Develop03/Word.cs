@@ -9,9 +9,8 @@ public class Word{
 
     public void Hide()
     {  
-        string hola = "hola";
         string wordHidden = "";
-        for (int i=0; i<hola.Length; i++)
+        for (int i=0; i<_text.Length; i++)
         {
             wordHidden = wordHidden + "_";
         }
