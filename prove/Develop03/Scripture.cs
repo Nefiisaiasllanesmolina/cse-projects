@@ -1,6 +1,7 @@
 public class Scripture{
 
-    public string Scriptures(){
+    Reference _reference = new Reference();
+    public Scripture(){
 
         List<string> _references = new List<string>
         {
@@ -12,7 +13,6 @@ public class Scripture{
         int index = rnd.Next(_references.Count);
         string _scripture = _references[index];
         Console.WriteLine(_scripture); //Este podría ponerlo en Program para imprimir, pero de acuerdo al principio de encapsulation debe estar aquí
-        return _scripture;
     }
 
     

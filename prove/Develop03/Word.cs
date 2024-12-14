@@ -1,4 +1,4 @@
 public class Word{
-    string _text;
-    bool _isHidden;
+    private string _text;
+    private bool _isHidden;
 }
