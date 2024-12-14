@@ -1,8 +1,14 @@
 public class Scripture{
 
     Reference _reference = new Reference("Jacob", 2, 18);
-    public List<Word> _words = new List<Word>();
-    public Scripture(){
+    private List<Word> _words = new List<Word>()
+
+    public Scripture(Reference Reference, string text)
+    {
+        _reference = Reference;
+    }
+
+    /*public Scripture(){
 
         List<string> _references = new List<string>
         {
@@ -14,7 +20,7 @@ public class Scripture{
         int index = rnd.Next(_references.Count);
         string _scripture = _references[index];
         Console.WriteLine(_scripture); //Este podría ponerlo en Program para imprimir, pero de acuerdo al principio de encapsulation debe estar aquí
-    }
+    }*/
 
     
 }
