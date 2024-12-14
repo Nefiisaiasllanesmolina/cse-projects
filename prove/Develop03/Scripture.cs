@@ -1,6 +1,7 @@
 public class Scripture{
 
-    Reference _reference = new Reference();
+    Reference _reference = new Reference("Jacob", 2, 18);
+    public List<Word> _words = new List<Word>();
     public Scripture(){
 
         List<string> _references = new List<string>
