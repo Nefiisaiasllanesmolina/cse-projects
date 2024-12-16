@@ -5,45 +5,49 @@ class Program
 {
     static void Main(string[] args)
     {
-        while(true)
+        Console.WriteLine($"\nYou have (aqui va el puntaje) points");
+        Console.WriteLine("\nMenu Options:");
+        Console.WriteLine("1. Create a New Goal");
+        Console.WriteLine("2. List Goals");
+        Console.WriteLine("3. Save Goals");
+        Console.WriteLine("4. Load Goals");
+        Console.WriteLine("5. Record Event");
+        Console.WriteLine("6. Quit");
+        Console.Write("Select a choice from the menu: ");
+
+        string choice = Console.ReadLine();
+        int numberChoice = int.Parse(choice);
+
+        GoalManager _goal = new GoalManager();
+
+        if (numberChoice == 1)
         {
-            Console.WriteLine($"\nYou have (aqui va el puntaje) points");
-            Console.WriteLine("\nMenu Options:");
-            Console.WriteLine("1. Create a New Goal");
-            Console.WriteLine("2. List Goals");
-            Console.WriteLine("3. Save Goals");
-            Console.WriteLine("4. Load Goals");
-            Console.WriteLine("5. Record Event");
-            Console.WriteLine("6. Quit");
-            Console.Write("Select a choice from the menu: ");
-
-            string choice = Console.ReadLine();
-
-            GoalManager _goal = new GoalManager();
             _goal.CreateGoal();
-
-            switch (choice)
-            {
-                case "1":
-                    _goal.CreateGoal();
-                    break;
-                case "2":
-                    _goal.ListGoalNames();
-                    break;
-                case "3":
-                    _goal.SaveGoals();
-                    break;
-                case "4":
-                    _goal.LoadGoals();
-                    break;
-                case "5":
-                    _goal.RecordEvent();
-                    break;
-                case "6":
-                    break;
-                
-            }
-        };
+        }
+        else if (numberChoice == 2)
+        {
+            _goal.ListGoalNames();
+        }
+        else if (numberChoice == 3)
+        {
+            _goal.SaveGoals();
+        }
+        else if (numberChoice == 4)
+        {
+            _goal.LoadGoals();
+        }
+        else if (numberChoice == 5)
+        {
+            _goal.RecordEvent();
+        }
+        else if (numberChoice == 6)
+        {
+            numberChoice = 7;
+        }
+        else
+        {
+            Console.WriteLine("Please select a valid option");
+        };           
     }
 
     /*static void CreateNewGoal()

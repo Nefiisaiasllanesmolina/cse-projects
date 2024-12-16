@@ -1,8 +1,10 @@
 public class EternalGoal
 {
-    public EternalGoal(string name, int points, string description)
+    public EternalGoal(string name, string description, int points)
     {
-
+        string _goal = $"{name}, ({description}, {points})";
+        GoalManager goal = new GoalManager();
+        goal.Start();
     }
 
     public void RecordEvent()

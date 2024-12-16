@@ -10,7 +10,45 @@ public class GoalManager
 
     public void Start()
     {
+        Console.WriteLine($"\nYou have (aqui va el puntaje) points");
+        Console.WriteLine("\nMenu Options:");
+        Console.WriteLine("1. Create a New Goal");
+        Console.WriteLine("2. List Goals");
+        Console.WriteLine("3. Save Goals");
+        Console.WriteLine("4. Load Goals");
+        Console.WriteLine("5. Record Event");
+        Console.WriteLine("6. Quit");
+        Console.Write("Select a choice from the menu: ");
 
+        string choice = Console.ReadLine();
+
+        GoalManager _goal = new GoalManager();
+        _goal.CreateGoal();
+
+        if (choice == "1")
+        {
+            _goal.CreateGoal();
+        }
+        else if (choice == "2")
+        {
+            _goal.ListGoalNames();
+        }
+        else if (choice == "3")
+        {
+            _goal.SaveGoals();
+        }
+        else if (choice == "4")
+        {
+            _goal.LoadGoals();
+        }
+        else if (choice == "5")
+        {
+            _goal.RecordEvent();
+        }
+        else
+        {
+            Console.WriteLine("Please select a valid option");
+        };           
     }
 
     public void DisplayPlayerInfo()
@@ -57,7 +95,8 @@ public class GoalManager
             string goalDescription1 = Console.ReadLine();
             Console.Write("What is the amount of points associated with this goal? ");
             string points1 = Console.ReadLine();
-            SimpleGoal simpleGoal1 = new SimpleGoal(goalName1, goalDescription1, points1);
+            int points1Int = int.Parse(points1);
+            EternalGoal simpleGoal1 = new EternalGoal(goalName1, goalDescription1, points1Int);
             simpleGoal1.RecordEvent();
         }
         else if (goalType == "3")
@@ -68,7 +107,14 @@ public class GoalManager
             string goalDescription2 = Console.ReadLine();
             Console.Write("What is the amount of points associated with this goal? ");
             string points2 = Console.ReadLine();
-            SimpleGoal simpleGoal2 = new SimpleGoal(goalName2, goalDescription2, points2);
+            int points2Int = int.Parse(points2);
+            Console.Write("How many times does this goal need to be accomplished for a bonus? ");
+            string target = Console.ReadLine();
+            int targetInt = int.Parse(target);
+            Console.Write("What is the bonus for accomplishing it that many times? ");
+            string bonus = Console.ReadLine();
+            int bonusInt = int.Parse(bonus);
+            ChecklistGoal simpleGoal2 = new ChecklistGoal(goalName2, goalDescription2, points2Int, targetInt, bonusInt);
             simpleGoal2.RecordEvent();
         }
         else
