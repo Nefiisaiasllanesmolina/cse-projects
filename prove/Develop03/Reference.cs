@@ -5,11 +5,11 @@ public class Reference
     private int _verse;
     private int _endVerse;
 
-    public Reference(string book, int chapter, int verse)
+    public Reference(string book, int chapter, int starVerse)
     {
         _book = book;
         _chapter = chapter;
-        _verse = verse;
+        _verse = starVerse;
     }
     public Reference(string book, int chapter, int verse, int endVerse)
     {
@@ -18,19 +18,17 @@ public class Reference
         _verse = verse;
         _endVerse = endVerse;
     }
-
+    
     public string GetDisplayText()
     {
         if (_endVerse == 0)
         {
-            string text = $"{_book} {_chapter}:{_verse} ";
-            Console.Write(text);
+            string text = $"{_book} {_chapter}:{_verse}";
             return text;
         }
         else
         {
-            string text = $"{_book} {_chapter}:{_verse}-{_endVerse} ";
-            Console.Write(text);
+            string text = $"{_book} {_chapter}:{_verse}-{_endVerse}";
             return text;
         }
     }

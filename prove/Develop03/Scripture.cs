@@ -1,29 +1,53 @@
 using System;
 using System.Collections.Generic;
 
-public class Scripture{
+public class Scripture
+{
+    private List<Word> _words;
+    public Reference Reference { get; }
+    private int currentWordIndex = 0;
 
-    Reference _reference = new Reference("Jacob", 2, 18);
-    private List<Word> _words = new List<Word>();
-
-    public Scripture(Reference Reference, string text)
+    public Scripture(Reference reference, string text)
     {
-        _reference = Reference;
+        Reference = reference;
+        _words = new List<Word>();
+
+        string[] wordArray = text.Split(' ');
+        foreach (var word in wordArray)
+        {
+            _words.Add(new Word(word));
+        }
     }
 
-    /*public Scripture(){
-
-        List<string> _references = new List<string>
+    public void HideRandomWords()
+    {
+        if (currentWordIndex < _words.Count)
         {
-            "Jacob 2:18 Pero antes de buscar riquezas, buscad el reino de Dios.",
-            "2 Nefi 2:25 Adán cayó para que los hombres existiesen; y existen los hombres para que tengan gozo.",
-        };
+            List<int> hiddenIndexes = _words
+                .Select((word, index) => new { Word = word, Index = index })
+                .Where(item => !item.Word._isHidden)
+                .Select(item => item.Index)
+                .ToList();
 
-        Random rnd = new Random();
-        int index = rnd.Next(_references.Count);
-        string _scripture = _references[index];
-        Console.WriteLine(_scripture); //Este podría ponerlo en Program para imprimir, pero de acuerdo al principio de encapsulation debe estar aquí
-    }*/
+                if (hiddenIndexes.Count > 0)
+                {
+                    Random random = new Random();
+                    int randomIndex = random.Next(0, hiddenIndexes.Count);
+                    _words[hiddenIndexes[randomIndex]].Hide();
+                    currentWordIndex++;
+                }
+        }
+    }
 
-    
+    public string GetDisplayText()
+    {
+        List<string> visibleWords = _words.ConvertAll(word => word.ToString());
+        string renderedText = string.Join(" ", visibleWords);
+        return $"{Reference.GetDisplayText()} | {renderedText}";
+    } 
+
+    public bool IsCompletelyHidden()
+    {
+        return currentWordIndex >= _words.Count;
+    }
 }
