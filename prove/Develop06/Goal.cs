@@ -13,7 +13,7 @@ public class Goal
 
     public void RecordEvent()
     {
-
+        
     }
 
     public bool IsComplete()
