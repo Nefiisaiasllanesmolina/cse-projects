@@ -1,3 +1,6 @@
+using System;
+using System.Collections.Generic;
+
 public class Scripture{
 
     Reference _reference = new Reference("Jacob", 2, 18);
