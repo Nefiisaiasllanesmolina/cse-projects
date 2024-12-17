@@ -16,7 +16,7 @@ public class GoalManager
     {
         while(true)
         {
-            Console.WriteLine($"\nYou have {_score} points");
+            Console.WriteLine($"You have {_score} points");
             Console.WriteLine("\nMenu Options:");
             Console.WriteLine("1. Create a New Goal");
             Console.WriteLine("2. List Goals");
