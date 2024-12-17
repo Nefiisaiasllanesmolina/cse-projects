@@ -151,8 +151,6 @@ public class GoalManager
         string filename = Console.ReadLine();
         string path = $@"C:\Users\ssptr\OneDrive\Escritorio\cse-projects\prove\Develop06\{filename}.txt";
 
-         if (!File.Exists(path))
-        {
             // Create a file to write to.
             using (StreamWriter sw = File.CreateText(path))
             {
@@ -163,7 +161,6 @@ public class GoalManager
                     sw.WriteLine($"{i} [ ] {goals}");
                 }
             }	
-        }
         Start();
     }
 
