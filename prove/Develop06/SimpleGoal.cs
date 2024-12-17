@@ -11,7 +11,6 @@ public class SimpleGoal
 
     public void RecordEvent()
     {
-        
         Console.WriteLine($"");
     }
 

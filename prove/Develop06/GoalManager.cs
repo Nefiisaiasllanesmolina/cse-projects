@@ -2,7 +2,8 @@ using System.Data;
 
 public class GoalManager
 {
-    List <Goal> _goals = new List<Goal>();
+    List <string> _goals = new List<string>();
+    
     private int _score;
 
     public GoalManager()
@@ -40,11 +41,15 @@ public class GoalManager
         }
         else if (choice == "4")
         {
-            _goal.LoadGoals();
+            LoadGoals();
         }
         else if (choice == "5")
         {
             _goal.RecordEvent();
+        }
+        else if (choice == "6")
+        {
+            choice = "7";
         }
         else
         {
@@ -58,13 +63,15 @@ public class GoalManager
     }
 
     public void ListGoalNames()
-    {        
-        Console.WriteLine();
-
-        foreach (var word in _goals)
+    {       
+        int i = 0; 
+        foreach (string word in _goals)
         {
-            Console.WriteLine($"{word}");
+            i++;
+            Console.WriteLine($"{i} [ ] {word}");
         }
+
+        Start();
     }
 
     public void ListGoalDetails()
@@ -91,8 +98,9 @@ public class GoalManager
             Console.Write("What is the amount of points associated with this goal? ");
             string points = Console.ReadLine();
             int pointsInt = int.Parse(points);
-            SimpleGoal simpleGoal = new SimpleGoal(goalName, goalDescription, pointsInt);
-            _goals.Add(new Goal(goalName, goalDescription, pointsInt));
+            //SimpleGoal simpleGoal = new SimpleGoal(goalName, goalDescription, pointsInt);
+            _goals.Add($"{goalName} {goalDescription} {pointsInt}");
+            Start();
         }
         else if (goalType == "2")
         {
@@ -103,8 +111,9 @@ public class GoalManager
             Console.Write("What is the amount of points associated with this goal? ");
             string points1 = Console.ReadLine();
             int points1Int = int.Parse(points1);
-            EternalGoal simpleGoal1 = new EternalGoal(goalName1, goalDescription1, points1Int);
-            _goals.Add(new Goal(goalName1, goalDescription1, points1Int));
+            //EternalGoal simpleGoal1 = new EternalGoal(goalName1, goalDescription1, points1Int);
+            _goals.Add($"{goalName1}, {goalDescription1}, {points1Int}");
+            Start();
         }
         else if (goalType == "3")
         {
@@ -121,8 +130,9 @@ public class GoalManager
             Console.Write("What is the bonus for accomplishing it that many times? ");
             string bonus = Console.ReadLine();
             int bonusInt = int.Parse(bonus);
-            ChecklistGoal simpleGoal2 = new ChecklistGoal(goalName2, goalDescription2, points2Int, targetInt, bonusInt);
-            _goals.Add(new Goal(goalName2, goalDescription2, points2Int));
+            //ChecklistGoal simpleGoal2 = new ChecklistGoal(goalName2, goalDescription2, points2Int, targetInt, bonusInt);
+            _goals.Add($"{goalName2}, {goalDescription2}, {points2Int}");
+            Start();
         }
         else
         {
@@ -147,12 +157,14 @@ public class GoalManager
             using (StreamWriter sw = File.CreateText(path))
             {
                 
-                foreach (Goal goals in _goals)
+                foreach (var goals in _goals)
                 {   
-                    sw.WriteLine(goals);
+                    int i = 1;
+                    sw.WriteLine($"{i} [ ] {goals}");
                 }
             }	
         }
+        Start();
     }
 
     public void LoadGoals()
@@ -175,5 +187,6 @@ public class GoalManager
             Console.WriteLine("The file could not be read:");
             Console.WriteLine(e.Message);
         }
+        Start();
     }
 }
