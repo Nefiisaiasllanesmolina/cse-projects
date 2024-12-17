@@ -11,7 +11,7 @@ public class ChecklistGoal
         _target = target;
         _bonus = bonus;
 
-        string _goal = $"{name}, ({description}, {points}) {_target} {_bonus}";
+        string _goal = $"{name}, {description}, {points}, {_target}, {_bonus}";
         GoalManager goal = new GoalManager();
         goal.Start();
     }

@@ -4,7 +4,7 @@ public class SimpleGoal
 
     public SimpleGoal(string name, string description, int points)
     {
-        string _goal = $"{name}, ({description}, {points})";
+        string _goal = $"{name}, {description}, {points}";
         GoalManager goal = new GoalManager();
         goal.Start();
     }

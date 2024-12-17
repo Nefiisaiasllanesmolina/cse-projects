@@ -5,7 +5,9 @@ class Program
 {
     static void Main(string[] args)
     {
-        Console.WriteLine($"\nYou have (aqui va el puntaje) points");
+        GoalManager goal = new GoalManager();
+        goal.Start();
+        /*Console.WriteLine($"\nYou have (0) points");
         Console.WriteLine("\nMenu Options:");
         Console.WriteLine("1. Create a New Goal");
         Console.WriteLine("2. List Goals");
@@ -47,7 +49,7 @@ class Program
         else
         {
             Console.WriteLine("Please select a valid option");
-        };           
+        };*/  
     }
 
     /*static void CreateNewGoal()
