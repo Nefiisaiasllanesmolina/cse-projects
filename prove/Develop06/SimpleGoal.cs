@@ -2,7 +2,7 @@ public class SimpleGoal
 {
     private bool _isComplete;
 
-    public SimpleGoal(string name, string description, string points)
+    public SimpleGoal(string name, string description, int points)
     {
         string _goal = $"{name}, ({description}, {points})";
         GoalManager goal = new GoalManager();
@@ -11,6 +11,7 @@ public class SimpleGoal
 
     public void RecordEvent()
     {
+        
         Console.WriteLine($"");
     }
 

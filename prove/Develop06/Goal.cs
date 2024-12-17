@@ -1,10 +1,10 @@
 public class Goal
 {
-    private string _shortName;
-    private string _description;
-    private string _points;
+    private string _shortName { get; }
+    private string _description { get; }
+    private int _points { get; }
 
-    public Goal(string name, string description, string points)
+    public Goal(string name, string description, int points)
     {
         _shortName = name;
         _description = description;
