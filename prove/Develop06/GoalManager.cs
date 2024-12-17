@@ -3,6 +3,12 @@ using System.Data;
 public class GoalManager
 {
     List <string> _goals = new List<string>();
+    List<string> _shortGoals = new List<string>();
+    List<Goal> listGoal = new List<Goal>()
+        {
+
+        };
+    
     
     private int _score;
 
@@ -65,12 +71,14 @@ public class GoalManager
     }
 
     public void ListGoalNames()
-    {   int i = 0; 
-        foreach (string word in _goals)
+    {   
+        int i = 0; 
+        foreach (string goal in _shortGoals)
         {
             i++;
-            Console.WriteLine($"{i} [ ] {word}");
+            Console.WriteLine($"{i}. [ ] {goal}");
         }
+        Console.WriteLine();
     }
 
     public void ListGoalDetails()
@@ -84,7 +92,7 @@ public class GoalManager
         Console.WriteLine("1. Simple Goal");
         Console.WriteLine("2. Eternal Goal");
         Console.WriteLine("3. Checklist Goal");
-        Console.Write("Which type of goal would you like to create: ");
+        Console.Write("Which type of goal would you like to create? ");
 
         string goalType = Console.ReadLine();
 
@@ -98,7 +106,8 @@ public class GoalManager
             string points = Console.ReadLine();
             int pointsInt = int.Parse(points);
             //SimpleGoal simpleGoal = new SimpleGoal(goalName, goalDescription, pointsInt);
-            _goals.Add($"{goalName}, {goalDescription}, {pointsInt}");
+            _goals.Add($"Simple Goal: {goalName}, {goalDescription}, {pointsInt}");
+            _shortGoals.Add($"{goalName} ({goalDescription})");
         }
         else if (goalType == "2")
         {
@@ -110,7 +119,8 @@ public class GoalManager
             string points1 = Console.ReadLine();
             int points1Int = int.Parse(points1);
             //EternalGoal simpleGoal1 = new EternalGoal(goalName1, goalDescription1, points1Int);
-            _goals.Add($"{goalName1}, {goalDescription1}, {points1Int}");
+            _goals.Add($"Eternal Goal: {goalName1}, {goalDescription1}, {points1Int}");
+            _shortGoals.Add($"{goalName1} ({goalDescription1})");
         }
         else if (goalType == "3")
         {
@@ -128,7 +138,8 @@ public class GoalManager
             string bonus = Console.ReadLine();
             int bonusInt = int.Parse(bonus);
             //ChecklistGoal simpleGoal2 = new ChecklistGoal(goalName2, goalDescription2, points2Int, targetInt, bonusInt);
-            _goals.Add($"{goalName2}, {goalDescription2}, {points2Int}");
+            _goals.Add($"Checklist Goal: {goalName2}, {goalDescription2}, {points2Int}, {targetInt}, {bonusInt}");
+            _shortGoals.Add($"{goalName2} ({goalDescription2})");
         }
         else
         {
@@ -147,16 +158,16 @@ public class GoalManager
         string filename = Console.ReadLine();
         string path = $@"C:\Users\ssptr\OneDrive\Escritorio\cse-projects\prove\Develop06\{filename}.txt";
 
-            // Create a file to write to.
-            using (StreamWriter sw = File.CreateText(path))
-            {
-                int i = 0;
-                foreach (var goals in _goals)
-                {   
-                    i++;
-                    sw.WriteLine($"{i} [ ] {goals}");
-                }
-            }	
+        // Create a file to write to.
+        using (StreamWriter sw = File.CreateText(path))
+        {
+            int i = 0;
+            foreach (var goals in _goals)
+            {   
+                i++;
+                sw.WriteLine($"{i} [ ] {goals}");
+            }
+        }	
     }
 
     public void LoadGoals()
