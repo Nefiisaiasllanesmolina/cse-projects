@@ -12,12 +12,14 @@ public abstract class Activity
 
     public string GetDate()
     {
-        return "";
+        DateTime date = DateTime.Now;
+        string _date = date.ToString("dd MMM yyyy");
+        return _date;
     }
 
     public double GetLength()
     {
-        return 2.3;
+        return _length;
     }
 
     public abstract double CalculateDistance();

@@ -20,5 +20,14 @@ public class Cycling : Activity
         return Math.Round(_speed, 1);
     }
 
+    public override double CalculatePace()
+    {
+        double pace = Math.Round(60 / CalculateSpeed(), 1);
+        return pace;
+    }
 
+    public override void DisplaySummary()
+    {
+        Console.WriteLine($"{GetDate()} Cycling ({GetLength()} min) - Distance: {CalculateDistance()} miles, Speed: {CalculateSpeed()}, Pace: {CalculatePace()} min per mile");
+    }
 }
